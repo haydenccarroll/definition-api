@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  api:
+    build: .
+    environment:
+      SOME_ENV_VAR: 3
+    ports:
+      - 8080:8080
+    restart: always
