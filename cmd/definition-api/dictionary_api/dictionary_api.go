@@ -3,7 +3,7 @@ package dictionary_api
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 
 	"github.com/haydenccarroll/definition-api/cmd/definition-api/structs"
@@ -17,7 +17,7 @@ func GetDefinitions(word string) ([]string, error) {
 
 	defer resp.Body.Close()
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}

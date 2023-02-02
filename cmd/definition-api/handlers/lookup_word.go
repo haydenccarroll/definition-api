@@ -29,5 +29,7 @@ func LookupWord(w http.ResponseWriter, r *http.Request) {
 		log.Println("Could not marshal definitions to send in response body", err)
 	}
 
-	w.Write(resp)
+	if _, err = w.Write(resp); err != nil {
+		log.Println("Could not write response", err)
+	}
 }
