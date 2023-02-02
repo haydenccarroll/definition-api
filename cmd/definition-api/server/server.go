@@ -20,7 +20,7 @@ func Command() *cli.Command {
 
 func startServer() {
 	s := &http.Server{
-		Addr:    ":80",
+		Addr:    ":8080",
 		Handler: getRouter(),
 	}
 
