@@ -8,6 +8,6 @@ WORKDIR /app
 COPY . .
 
 RUN apk add --update make
-RUN make definition-api
+RUN make definition_api
 
-CMD ["definition-api", "serve"]
+CMD ["definition_api", "serve"]

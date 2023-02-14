@@ -10,7 +10,7 @@ import (
 func Command() *cli.Command {
 	return &cli.Command{
 		Name:  "serve",
-		Usage: "starts a server for definition-api",
+		Usage: "starts a server for definition_api",
 		Action: func(ctx *cli.Context) error {
 			startServer()
 			return nil

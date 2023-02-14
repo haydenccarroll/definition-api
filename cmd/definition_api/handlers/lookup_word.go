@@ -6,8 +6,12 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/haydenccarroll/definition-api/cmd/definition-api/anki"
-	"github.com/haydenccarroll/definition-api/cmd/definition-api/dictionary_api"
+	"github.com/haydenccarroll/definition_api/cmd/definition_api/anki_client"
+	"github.com/haydenccarroll/definition_api/cmd/definition_api/dictionary_api"
+)
+
+const (
+	deckName = "Obscure English Words"
 )
 
 func LookupWord(w http.ResponseWriter, r *http.Request) {
@@ -19,7 +23,7 @@ func LookupWord(w http.ResponseWriter, r *http.Request) {
 		log.Println("Error getting definition", err)
 	}
 
-	if err = anki.AddCard(word, definitions); err != nil {
+	if err = anki_client.AddCard(word, definitions, deckName); err != nil {
 		log.Println("Error storing definition", err)
 	}
 

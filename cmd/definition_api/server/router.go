@@ -2,7 +2,7 @@ package server
 
 import (
 	"github.com/gorilla/mux"
-	"github.com/haydenccarroll/definition-api/cmd/definition-api/handlers"
+	"github.com/haydenccarroll/definition_api/cmd/definition_api/handlers"
 )
 
 func getRouter() *mux.Router {

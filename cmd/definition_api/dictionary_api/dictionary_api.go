@@ -6,7 +6,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/haydenccarroll/definition-api/cmd/definition-api/structs"
+	"github.com/haydenccarroll/definition_api/cmd/definition_api/structs"
 )
 
 func GetDefinitions(word string) ([]string, error) {

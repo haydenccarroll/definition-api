@@ -2,9 +2,20 @@ version: "3"
 
 services:
   api:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       SOME_ENV_VAR: 3
     ports:
       - 8080:8080
+    restart: always
+    depends_on: 
+     - ankiserver
+  ankiserver:
+    build:
+      context: .
+      dockerfile: Dockerfile.anki
+    environment:
+      SOME_ANKI_ENV: 3
     restart: always
