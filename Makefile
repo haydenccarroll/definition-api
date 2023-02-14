@@ -6,10 +6,10 @@ up:
 down:
 	docker-compose down --volumes
 
-definition-api:
+definition_api:
 	go get -d -v ./...
 	go install -v ./...
-	go build -o definition-api ./cmd/definition-api
+	go build -o definition_api ./cmd/definition_api
 
 .PHONY: githooks
 githooks:

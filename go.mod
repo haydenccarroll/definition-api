@@ -1,4 +1,4 @@
-module github.com/haydenccarroll/definition-api
+module github.com/haydenccarroll/definition_api
 
 go 1.19
 

@@ -1,0 +1,25 @@
+FROM ubuntu:latest
+
+LABEL maintainer="Hayden Carroll"
+
+RUN mkdir /app
+WORKDIR /app
+
+COPY . .
+
+# install dependencies
+RUN apt-get update
+RUN apt-get install -y libxcb-xinerama0 
+RUN apt-get install -y curl
+RUN apt-get install -y zstd
+RUN apt-get install -y xdg-utils
+
+# download and extract anki
+RUN curl -o anki-download.tar.zst -L https://github.com/ankitects/anki/releases/download/2.1.54/anki-2.1.54-linux-qt6.tar.zst
+RUN unzstd anki-download.tar.zst
+RUN tar -xf anki-download.tar
+
+# install anki
+RUN cd anki-2.1.54-linux-qt6 && ./install.sh
+
+CMD ["echo", "nothing!"]
